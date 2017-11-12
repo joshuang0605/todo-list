@@ -3,3 +3,11 @@
   width: 360px;
   margin: 0 auto;
 }
+
+/*Complete class
+to apply on LI click event
+*/
+.completed {
+  color: gray;
+  text-decoration: line-through;
+}

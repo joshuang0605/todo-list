@@ -20,4 +20,7 @@ $("li").click(function(){
 });
 */
 
-//Mehod 2
+//Method 2
+$("li").click(function(){
+  $(this).toggleClass("completed");
+});

@@ -21,15 +21,28 @@ $("li").click(function(){
 */
 
 //Method 2
-$("li").click(function(){
+$("ul").on("click", "li", function(){
   $(this).toggleClass("completed");
 });
 
 //Click on X to delete
-$("span").click(function(event){
+$("ul").on("click", "span", function(event){
+  //add fadeOut method with time and remove method
   $(this).parent().fadeOut(500,function(){
     $(this).remove();
   });
   //stopPropagation to stop firing event in parent element till html
   event.stopPropagation();
+});
+
+//add keyPresse event to input
+$("input[type='text']").keypress(function(event){
+  if(event.which === 13){
+    //extract input text to li
+    var todoText = $(this).val();
+    //clear input text
+    $(this).val("");
+    //create new li and add to ul
+    $("ul").append("<li><span>X</span> " + todoText + "</li>");
+  }
 });
